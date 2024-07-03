@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import netflix from "../assets/netflix.png";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
@@ -12,11 +13,21 @@ const TopBar = () => {
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav className="me-auto mb-2 mb-lg-0">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">TV Shows</Nav.Link>
-            <Nav.Link href="#">Movies</Nav.Link>
-            <Nav.Link href="#">Recently Added</Nav.Link>
-            <Nav.Link href="#">My List</Nav.Link>
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/tvshows" className="nav-link">
+              TV Shows
+            </Link>
+            <Link to="/movies" className="nav-link">
+              Movies
+            </Link>
+            <Link to="/recentely-added" className="nav-link">
+              Recently Added
+            </Link>
+            <Link to="/my-list" className="nav-link">
+              My List
+            </Link>
           </Nav>
           <Nav className="mb-2 mb-lg-0">
             <Nav.Link href="#">
@@ -51,6 +62,7 @@ const TopBar = () => {
               </svg>
             </Nav.Link>
             <NavDropdown
+              data-bs-theme="dark"
               align="end"
               title={
                 <img
@@ -62,11 +74,19 @@ const TopBar = () => {
               }
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="https://www.netflix.com/login">HomePage</NavDropdown.Item>
-              <NavDropdown.Item href="./profile.html">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="./setting.html">Setting</NavDropdown.Item>
+              <Link to="/" className="dropdown-item">
+                HomePage
+              </Link>
+              <Link to="/profile" className="dropdown-item">
+                Profile
+              </Link>
+              <Link to="/setting" className="dropdown-item">
+                Setting
+              </Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="https://www.netflix.com/login">Log-Out</NavDropdown.Item>
+              <Link to="https://www.netflix.com/login" className="dropdown-item">
+                Log-Out
+              </Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

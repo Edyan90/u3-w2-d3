@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
 
 const CarouselCustom = (props) => {
   console.log(props.movies);
@@ -157,8 +158,14 @@ const CarouselCustom = (props) => {
       <Carousel.Item>
         <Row>
           {props.movies.slice(0, 6).map((movie, index) => (
-            <Col sm={4} md={4} lg={2} key={index} className={index >= 3 ? "d-none d-lg-block" : ""}>
-              <img src={movie.Poster} style={{ height: "310px" }} alt={movie.Title} />
+            <Col sm={4} md={4} lg={2} key={index} className={index >= 3 ? "d-none d-lg-block movie" : "movie"}>
+              <Link to={"/movie-details/" + movie.imdbID}>
+                <img
+                  src={movie.Poster}
+                  style={{ height: "310px", width: "100%", objectFit: "cover" }}
+                  alt={movie.Title}
+                />
+              </Link>
             </Col>
           ))}
         </Row>
@@ -166,13 +173,25 @@ const CarouselCustom = (props) => {
       <Carousel.Item>
         <Row>
           {props.movies.slice(6).map((movie, index) => (
-            <Col sm={4} md={4} lg={2} key={index}>
-              <img src={movie.Poster} style={{ height: "310px" }} alt={movie.Title} />
+            <Col sm={4} md={4} lg={2} key={index} className={index >= 3 ? "d-none d-lg-block movie" : "movie"}>
+              <Link to={"/movie-details/" + movie.imdbID}>
+                <img
+                  src={movie.Poster}
+                  style={{ height: "310px", width: "100%", objectFit: "cover" }}
+                  alt={movie.Title}
+                />
+              </Link>
             </Col>
           ))}
           {props.movies.slice(0, 2).map((movie, index) => (
-            <Col sm={4} md={4} lg={2} key={index}>
-              <img src={movie.Poster} style={{ height: "310px" }} alt={movie.Title} />
+            <Col sm={4} md={4} lg={2} key={index} className={index >= 3 ? "d-none d-lg-block movie" : "movie"}>
+              <Link to={"/movie-details/" + movie.imdbID}>
+                <img
+                  src={movie.Poster}
+                  style={{ height: "310px", width: "100%", objectFit: "cover" }}
+                  alt={movie.Title}
+                />
+              </Link>
             </Col>
           ))}
         </Row>
