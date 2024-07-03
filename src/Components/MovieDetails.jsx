@@ -1,8 +1,7 @@
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 const MovieDetails = () => {
   const params = useParams();
   console.log(params.id);
@@ -27,15 +26,20 @@ const MovieDetails = () => {
   }, []);
 
   return (
-    <Container>
-      <Card>
-        <Card.Img className="" variant="top" src={movie.Poster} style={{ width: "60%" }} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Plot}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
+    <Container className="text-white">
+      <h1>{movie.Title}</h1>
+      <Row>
+        <Col>
+          <div className="d-flex">
+            <img src={movie.Poster} alt="Poster" style={{ width: "85%" }} />
+          </div>
+        </Col>
+        <Col>
+          <h4>Plot</h4>
+          <p>{movie.Plot}</p>
+        </Col>
+      </Row>
+      <Footer />
     </Container>
   );
 };
