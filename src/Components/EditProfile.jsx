@@ -4,7 +4,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import netflix from "../assets/netflix.png";
 const EditProfile = () => {
   return (
-    <Container className="text-light" data-bs-theme="dark">
+    <Container className="text-light" data-bs-theme="dark" style={{ height: "95vh" }}>
       <div className="px-5">
         <a className="navbar-brand" href="./index.html">
           <img src={netflix} style={{ width: "150px" }} alt="Netflix Logo" />
@@ -19,7 +19,11 @@ const EditProfile = () => {
           <Row className="justify-content-center">
             <Col xs={3}>
               <div className="position-relative">
-                <img src="./img/assets/avatar.png" alt="perfil" className="img-fluid" style={{ width: "65%" }} />
+                <img
+                  src="https://media.licdn.com/dms/image/D4D03AQE7LaHItv4lEA/profile-displayphoto-shrink_800_800/0/1711433459971?e=1723075200&v=beta&t=8UjxIjNg97GhiNb8oMaIixEqKQzEqfvxasPTmIOoRmw"
+                  alt="perfil"
+                  className="img-fluid"
+                />
                 <FaPencilAlt className="position-absolute bottom-0 start-0" />
               </div>
             </Col>
@@ -81,11 +85,11 @@ const EditProfile = () => {
             </Col>
           </Row>
           <hr />
-          <Row className="gap-3">
-            <Button className="btn-custom">SAVE</Button>
-            <Button className="btn-custom">CANCEL</Button>
-            <Button className="btn-custom">DELETE PROFILE</Button>
-          </Row>
+          <div className="d-flex gap-3">
+            <Button className="inline-block">SAVE</Button>
+            <Button className="inline-block">CANCEL</Button>
+            <Button className="inline-block">DELETE PROFILE</Button>
+          </div>
         </div>
       </Row>
     </Container>
